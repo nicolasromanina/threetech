@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <img 
-              src="/logo.png" 
+              src="/logo.jfif" 
               alt="Threetech" 
               className="h-12 w-auto"
             />
