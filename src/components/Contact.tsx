@@ -5,9 +5,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -17,12 +19,37 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Here you would typically send the form data to a backend
-    console.log("Form submitted:", formData);
-    
+  // Configuration EmailJS - REMPLACEZ template_id ET public_key
+  const SERVICE_ID = 'service_zcfryrk';
+  const TEMPLATE_ID = 'template_rtjqtux'; // À remplacez
+  const PUBLIC_KEY = 'qGQxArshJNM3ldvEP'; // À remplacez
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoading(true);
+
+  try {
+    await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_company: formData.company || 'Non spécifié',
+        from_email: formData.email,
+        from_phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        date: new Date().toLocaleDateString('fr-FR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        }),
+      },
+      PUBLIC_KEY
+    );
+
     toast({
       title: "Message envoyé !",
       description: "Nous vous contacterons dans les plus brefs délais.",
@@ -36,7 +63,18 @@ const Contact = () => {
       service: "",
       message: "",
     });
-  };
+
+  } catch (error) {
+    console.error("Erreur lors de l'envoi:", error);
+    toast({
+      title: "Erreur",
+      description: "Une erreur est survenue. Veuillez réessayer.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -162,14 +200,20 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    Envoyer le message
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Envoi en cours..." : "Envoyer le message"}
                   </Button>
                 </form>
               </CardContent>
             </Card>
           </div>
 
+          {/* ... Le reste de votre code reste identique ... */}
           <div className="space-y-6">
             <Card className="shadow-soft">
               <CardContent className="pt-6">

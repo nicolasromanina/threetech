@@ -18,7 +18,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">Threetech</h1>
+            <img 
+              src="/logo.png" 
+              alt="Threetech" 
+              className="h-12 w-auto"
+            />
+            <span className="text-blue-600 font-bold ml-3">THREETECH</span>
           </div>
 
           {/* Desktop Navigation */}
