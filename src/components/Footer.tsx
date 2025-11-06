@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-secondary-foreground/80">
-              <li>Tsiadana, 101 Antananarivo</li>
+              <li>Ambohipo, 101 Antananarivo</li>
               <li>
                 <a href="tel:+261341181503" className="hover:text-accent transition-colors">
                   +261 34 11 815 03
