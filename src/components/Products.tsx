@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import alarmImage from "@/assets/product-alarm.jpg";
 import controllerImage from "@/assets/product-controller.jpg";
 import devboardImage from "@/assets/product-devboard.jpg";
+import rfidImage from "@/assets/product-rfid.jpg";
+import fingerprintImage from "@/assets/product-fingerprint.jpg";
+import energyImage from "@/assets/product-energy.jpg";
 
 const products = [
   {
@@ -22,6 +25,24 @@ const products = [
     description: "Kit complet pour prototypage rapide, idéal développeurs et étudiants",
     image: devboardImage,
     features: ["Tous composants inclus", "Documentation complète", "Parfait pour l'apprentissage"],
+  },
+  {
+    title: "Contrôle d'accès RFID",
+    description: "Système de contrôle d'accès par carte RFID sécurisé et facile à installer",
+    image: rfidImage,
+    features: ["Lecture rapide", "Multi-utilisateurs", "Journal d'accès"],
+  },
+  {
+    title: "Contrôle d'accès biométrique",
+    description: "Solution de contrôle d'accès par empreinte digitale haute sécurité",
+    image: fingerprintImage,
+    features: ["Haute précision", "Mémoire 1000+ empreintes", "Résistant aux intempéries"],
+  },
+  {
+    title: "Suivi de consommation électrique",
+    description: "Moniteur intelligent pour analyse et optimisation de votre consommation énergétique",
+    image: energyImage,
+    features: ["Mesure en temps réel", "Historique détaillé", "Alertes de surconsommation"],
   },
 ];
 
