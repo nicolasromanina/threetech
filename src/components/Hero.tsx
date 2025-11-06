@@ -52,7 +52,7 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-primary-foreground/20">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">10+</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">5+</div>
               <div className="text-primary-foreground/80">Ans d'expérience</div>
             </div>
             <div className="text-center">

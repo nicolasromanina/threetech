@@ -215,9 +215,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">
-                      contact@threetech.mg
-                    </p>
+                    <a
+                      href="mailto:nicolasromanina@gmail.com"
+                      className="text-sm text-primary hover:underline"
+                    >
+                      nicolasromanina@gmail.com
+                    </a>
                   </div>
                 </div>
               </CardContent>

@@ -21,7 +21,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Expertise</h3>
               <p className="text-muted-foreground">
-                Plus de 10 ans d'expérience dans les technologies de pointe
+                Plus de 5 ans d'expérience dans les technologies de pointe
               </p>
             </div>
 
