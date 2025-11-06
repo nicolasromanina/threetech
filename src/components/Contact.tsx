@@ -224,7 +224,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Adresse</h3>
                     <p className="text-sm text-muted-foreground">
-                      Tsiadana, 101<br />
+                      Ambohipo, 101<br />
                       Antananarivo, Madagascar
                     </p>
                   </div>
